@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend "quote_#{@quote.id}_comments", @comment %>
+<%= turbo_stream.update "quote_#{@quote.id}_#{dom_id(@quote.comments.new)}", "" %>

@@ -1,0 +1,3 @@
+<%= turbo_frame_tag "quote_#{@quote.id}_#{dom_id(@comment)}" do %>
+  <%= render partial: "form", locals: { quote: @quote, comment: @comment, url: quote_comments_path(@quote), method: :post } %>
+<% end %>

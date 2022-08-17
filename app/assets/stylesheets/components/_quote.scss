@@ -1,7 +1,7 @@
 .quote {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   gap: var(--space-s);
 
   background-color: var(--color-white);
@@ -10,9 +10,9 @@
   margin-bottom: var(--space-m);
   padding: var(--space-xs);
 
-  // @include media(tabletAndUp) {
-  //   padding: var(--space-xs) var(--space-m);
-  // }
+  @include media(tabletAndUp) {
+    padding: var(--space-xs) var(--space-m);
+  }
 
   &__actions {
     display: flex;
@@ -20,4 +20,9 @@
     align-self: flex-start;
     gap: var(--space-xs);
   }
+}
+
+.quote-card-body {
+  overflow-y: scroll;
+  max-height: 20rem;
 }

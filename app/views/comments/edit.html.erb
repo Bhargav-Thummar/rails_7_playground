@@ -1,0 +1,11 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to quote"), quote_path(@quote) %>
+
+  <div class="header">
+    <h1>Edit quote</h1>
+  </div>
+
+  <%= turbo_frame_tag @comment do %>
+    <%= render partial: "form", locals: { quote: @quote, comment: @comment, url: quote_comment_path(@quote), method: :patch } %>
+  <% end %>
+</main>

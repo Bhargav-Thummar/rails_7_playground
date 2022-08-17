@@ -8,9 +8,13 @@ en:
     placeholders:
       quote:
         name: Name of your quote
+        comments:
+          body: Body of comment
     labels:
       quote:
         name: Name
+        comments:
+          body: Body
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
@@ -21,6 +25,9 @@ en:
       quote:
         create: Create quote
         update: Update quote
+        comments:
+          create: Create comment
+          update: Update comment
 
     # Examples
     # labels:

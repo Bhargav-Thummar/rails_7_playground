@@ -29,8 +29,13 @@
 @import "components/form";
 @import "components/visually_hidden";
 @import "components/quote";
+@import "components/comment";
 @import "components/turbo_progress_bar";
 
 // Layouts
 @import "layouts/container";
 @import "layouts/header";
+
+// Custom
+@import "custom/index";
+

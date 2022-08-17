@@ -1,0 +1,11 @@
+<%= simple_form_for(comment, url: url, method: method, html: { class: "comment form" }) do |f| %>
+  <% if comment.errors.any? %>
+    <div class="error-message">
+      <%= comment.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :body, input_html: { autofocus: true } %>
+  <%= link_to "Cancel", quotes_path, class: "btn btn--light" %>
+  <%= f.submit "Submit", class: "btn btn--secondary" %>
+<% end %>

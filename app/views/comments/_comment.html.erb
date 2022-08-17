@@ -1,0 +1,25 @@
+<% if comment.persisted? %>
+  <div class="card my-1">
+    <div class="card-body text-start p-0">
+      <blockquote class="blockquote mb-0">
+        <%= turbo_frame_tag comment do %>
+          <div class="comment">
+            <%=
+              comment.body
+            %>
+            <div class="comment__actions">
+              <%= button_to "Delete",
+                            quote_comment_path(comment.quote, comment),
+                            method: :delete,
+                            class: "btn btn--light" %>
+
+              <%= link_to "Edit",
+                          edit_quote_comment_path(comment.quote, comment),
+                          class: "btn btn--light" %>
+            </div>
+          </div>
+        <% end %>
+      </blockquote>
+    </div>
+  </div>
+<% end %>

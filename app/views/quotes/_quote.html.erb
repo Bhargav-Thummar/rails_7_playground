@@ -1,18 +1,46 @@
-<%= turbo_frame_tag quote do %>
-  <div class="quote">
-    <%= 
-      link_to quote.name, 
-        quote_path(quote), 
-        data: { turbo_frame: "_top" } 
-    %>
-    <div class="quote__actions">
-      <%= button_to "Delete",
-                    quote_path(quote),
-                    method: :delete,
-                    class: "btn btn--light" %>
-      <%= link_to "Edit",
-                  edit_quote_path(quote),
-                  class: "btn btn--light" %>
+<%= turbo_frame_tag "main__#{dom_id(quote)}" do %>
+  <div class="quote-card card text-center mt-3">
+    <div class="card-header">
+      <%= turbo_frame_tag quote do %>
+        <div class="quote">
+          <%= 
+            link_to quote.name,
+              quote_path(quote),
+              data: { turbo_frame: "_top" } 
+          %>
+          <div class="quote__actions">
+            <%= button_to "Delete",
+                          quote_path(quote),
+                          method: :delete,
+                          class: "btn btn--light" %>
+
+            <%= link_to "Edit",
+                        edit_quote_path(quote),
+                        class: "btn btn--light" %>
+          </div>
+        </div>
+      <% end %>
     </div>
+
+    <div class="quote-card-body card-body">
+      <%= link_to "New comment", 
+                  new_quote_comment_path(quote), 
+                  class: "btn btn--primary", 
+                  data: { turbo_frame: "quote_#{quote.id}_#{dom_id(quote.comments.new)}" } 
+      %>
+
+      <hr />
+
+      <div class="m-2">
+        <%= turbo_frame_tag "quote_#{quote.id}_#{dom_id(quote.comments.new)}" %>
+      </div>
+
+     <%= turbo_frame_tag "quote_#{quote.id}_comments" do %>
+        <%= render quote.comments.ordered %>
+      <% end %>
+    </div>
+
+    <div class="card-footer text-muted"></div>
+    
   </div>
 <% end %>

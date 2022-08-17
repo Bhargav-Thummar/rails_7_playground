@@ -1,1 +1,2 @@
-<%= turbo_stream.remove @quote.id %>
+<%#= turbo_stream.remove @quote.id %>
+<%= turbo_stream.remove "main__#{dom_id(@quote)}" %>
