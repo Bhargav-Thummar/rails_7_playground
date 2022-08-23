@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   # Defines the root path route ("/")
-  root "quotes#index"
+  root to: "pages#home"
+  # root "quotes#index"
+
+  devise_for :users
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :quotes do
     resources :comments

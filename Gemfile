@@ -79,3 +79,4 @@ gem "simple_form"
 # redis
 gem 'redis-namespace'
 gem 'redis-rails'
+gem "devise", "~> 4.8.1"
