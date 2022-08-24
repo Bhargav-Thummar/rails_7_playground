@@ -6,15 +6,15 @@ Company.destroy_all
 company_1 = Company.find_or_create_by(name: "KPMG")
 users = 
   [
-    { company: company_1, email: "accountant@kpmg.com", password: "password", encrypted_password: Devise::Encryptor.digest(User, "password") },
-    { company: company_1, email: "manager@kpmg.com", password: "password", encrypted_password: Devise::Encryptor.digest(User, "password") }
+    { company: company_1, email: "accountant@kpmg.com", password: "aaaaaa", encrypted_password: Devise::Encryptor.digest(User, "aaaaaa") },
+    { company: company_1, email: "manager@kpmg.com", password: "aaaaaa", encrypted_password: Devise::Encryptor.digest(User, "aaaaaa") }
   ]
 company_1.users.create!(users)
 
 company_2 = Company.find_or_create_by(name: "PwC")
 users = 
 [
-  { company: company_2, email: "eavesdropper@pwc.com", password: "password", encrypted_password: Devise::Encryptor.digest(User, "password") }
+  { company: company_2, email: "eavesdropper@pwc.com", password: "aaaaaa", encrypted_password: Devise::Encryptor.digest(User, "aaaaaa") }
 ]
 company_2.users.create!(users)
 
