@@ -1,2 +1,2 @@
-<%= turbo_stream.replace "main__#{dom_id(@quote)}" %>
+<%= turbo_stream.replace "main__#{dom_id(@quote)}", partial: "quotes/quote", locals: { quote: @quote } %>
 <%= render_turbo_stream_flash_messages %>
