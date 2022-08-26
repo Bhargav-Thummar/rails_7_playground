@@ -35,8 +35,12 @@ instance_variable_set("@company_2", company_2)
       company: instance_variable_get("@company_#{i.odd? ? "1" : "2"}")
     )
 
-  comments = [] 
+  comments = []
+  line_item_dates = []
+
   6.times { |j| comments << { body: "quote-#{i}: comment #{j + 1}" } }
+  6.times { |j| line_item_dates << { date: Date.current + j.days } }
 
   quote.comments.create!(comments)
+  quote.line_item_dates.create!(line_item_dates)
 end

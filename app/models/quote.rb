@@ -2,6 +2,7 @@ class Quote < ApplicationRecord
   # assoications
   belongs_to :company
   has_many :comments, dependent: :destroy
+  has_many :line_item_dates, dependent: :destroy
 
   # validations
   validates :name, presence: true

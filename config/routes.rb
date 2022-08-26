@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   resources :quotes do
     resources :comments
+
+    resources :line_item_dates, except: [:index, :show]
   end
 end
