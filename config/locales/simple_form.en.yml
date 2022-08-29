@@ -8,15 +8,25 @@ en:
     placeholders:
       quote:
         name: Name of your quote
-        comments:
-          body: Body of comment
+      comments:
+        body: Body of comment
+      line_item:
+        name: Name of your item
+        description: Description (optional)
+        quantity: 1
+        unit_price: $100.00
     labels:
       quote:
         name: Name
-        comments:
-          body: Body
-        line_item_date:
+      comments:
+        body: Body
+      line_item_date:
           date: Date
+      line_item:
+        name: Name
+        description: Description
+        quantity: Quantity
+        unit_price: Unit price
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
@@ -27,12 +37,16 @@ en:
       quote:
         create: Create quote
         update: Update quote
-        comments:
-          create: Create comment
-          update: Update comment
+      comments:
+        create: Create comment
+        update: Update comment
       line_item_date:
         create: Create date
         update: Update date
+      line_item:
+        create: Create item
+        update: Update item
+
     # Examples
     # labels:
     #   defaults:

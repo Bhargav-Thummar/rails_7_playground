@@ -43,4 +43,24 @@ instance_variable_set("@company_2", company_2)
 
   quote.comments.create!(comments)
   quote.line_item_dates.create!(line_item_dates)
+
+  quote.line_item_dates.each do |line_item_date|
+    line_items = 
+      [
+        {
+          name: "Meeting room",
+          description: "A cosy meeting room for 10 people",
+          quantity: 1,
+          unit_price: 1000
+        },
+        {
+          name: "Meal tray",
+          description: "Our delicious meal tray",
+          quantity: 10,
+          unit_price: 25
+        }
+      ]
+
+      line_item_date.line_items.create!(line_items)
+  end
 end
