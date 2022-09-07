@@ -1,3 +1,4 @@
 # README
 
-https://www.hotrails.dev/turbo-rails/turbo-frames-and-turbo-streams
+https://www.hotrails.dev/turbo-rails
+https://www.honeybadger.io/blog/containerizing-an-existing-rails-application/

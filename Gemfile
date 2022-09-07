@@ -53,7 +53,7 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://github.com/pry/pry
-  gem 'pry'
+  gem "pry"
 end
 
 group :development do
@@ -77,6 +77,6 @@ end
 gem "simple_form"
 
 # redis
-gem 'redis-namespace'
-gem 'redis-rails'
+gem "redis-namespace"
+gem "redis-rails"
 gem "devise", "~> 4.8.1"
