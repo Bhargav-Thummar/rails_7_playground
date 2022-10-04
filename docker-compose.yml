@@ -5,15 +5,19 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: Thummar_PG1.
+      POSTGRES_HOST_AUTH_METHOD: "trust"
     volumes:
       - postgres:/var/lib/postgresql/data
   web:
     build: .
+    environment:
+      RAILS_ENV: development
+      RAILS_MASTER_KEY: 2e4c7173623402f3ba1ddcc8a3723772
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
-      - .:/Rails-Docker
+      - .:/Projects/Self/Rails/rails_7_playground
     ports:
-      - "3001:3000"
+      - "3000:3000"
     depends_on:
       - db
 volumes:
