@@ -2,7 +2,7 @@ class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
 
   def index
-    @quotes = current_company.quotes.ordered
+    @quotes = current_company.quotes.eager_load(:comments).ordered
   end
 
   def show

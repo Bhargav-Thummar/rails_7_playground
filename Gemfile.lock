@@ -72,7 +72,11 @@ GEM
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
+    brakeman (5.3.1)
     builder (3.2.4)
+    bullet (7.0.3)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     capybara (3.37.1)
       addressable
       matrix
@@ -83,6 +87,8 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (4.1.0)
+    code_analyzer (0.5.5)
+      sexp_processor
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
@@ -96,8 +102,13 @@ GEM
       warden (~> 1.2.3)
     digest (3.1.0)
     erubi (1.11.0)
+    erubis (2.7.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    graphiql-rails (1.8.0)
+      railties
+      sprockets-rails
+    graphql (2.0.14)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.5)
@@ -105,6 +116,7 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.0.3)
       railties (>= 6.0.0)
+    json (2.6.2)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -143,6 +155,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
+    rack-mini-profiler (3.0.0)
+      rack (>= 1.2.0)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (7.0.3.1)
@@ -164,6 +178,14 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
+    rails_best_practices (1.23.1)
+      activesupport
+      code_analyzer (~> 0.5.5)
+      erubis
+      i18n
+      json
+      require_all (~> 3.0)
+      ruby-progressbar
     railties (7.0.3.1)
       actionpack (= 7.0.3.1)
       activesupport (= 7.0.3.1)
@@ -192,16 +214,19 @@ GEM
     redis-store (1.9.1)
       redis (>= 4, < 5)
     regexp_parser (2.5.0)
+    require_all (3.0.0)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.4.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sexp_processor (4.16.1)
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -217,12 +242,15 @@ GEM
     strscan (3.0.4)
     thor (1.2.1)
     timeout (0.3.0)
+    traceroute (0.8.1)
+      rails (>= 3.0.0)
     turbo-rails (1.1.1)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    uniform_notifier (1.16.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -247,15 +275,21 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  brakeman
+  bullet
   capybara
   cssbundling-rails
   devise (~> 4.8.1)
+  graphiql-rails
+  graphql
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
   pry
   puma (~> 5.0)
+  rack-mini-profiler
   rails (~> 7.0.3, >= 7.0.3.1)
+  rails_best_practices
   redis (~> 4.0)
   redis-namespace
   redis-rails
@@ -263,6 +297,7 @@ DEPENDENCIES
   simple_form
   sprockets-rails
   stimulus-rails
+  traceroute
   turbo-rails
   tzinfo-data
   web-console

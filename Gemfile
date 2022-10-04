@@ -59,9 +59,13 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "brakeman"
+  gem "traceroute"
+  gem "bullet"
+  gem "rails_best_practices"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
+  gem "rack-mini-profiler", require: ["enable_rails_patches"]
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
@@ -80,3 +84,5 @@ gem "simple_form"
 gem "redis-namespace"
 gem "redis-rails"
 gem "devise", "~> 4.8.1"
+gem "graphql"
+gem "graphiql-rails", group: :development
