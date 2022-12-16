@@ -3,6 +3,7 @@ class QuotesController < ApplicationController
 
   def index
     @quotes = current_company.quotes.ordered
+    # @quotes = current_company.quotes.eager_load(:comments).ordered
   end
 
   def show
